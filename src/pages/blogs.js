@@ -86,7 +86,7 @@ const Blog = () => {
                   />
                 )}
 
-                <p>{data.node.excerpt.childMarkdownRemark.excerpt}</p>
+                <p>{data.node.excerpt.excerpt}</p>
                 <div className="button">
                   <Link to={`/blogs/${data.node.slug}/`}>Read More</Link>
                 </div>
