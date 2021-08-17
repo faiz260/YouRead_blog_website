@@ -79,6 +79,10 @@ ul {
   color: #ffd369;
   border-radius: 0.2rem;
 }
+.explore_button:hover {
+  background-color: #ffd369;
+  color: white;
+}
 .home_body > div {
   display: flex;
   align-items: center;

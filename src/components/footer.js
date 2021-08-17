@@ -44,15 +44,15 @@ function Footer() {
             {">"}
             <span>Home </span>
           </Link>
-          <Link className={links} to="/">
+          <Link className={links} to="/blogs">
             {">"}
             <span>Blogs</span>
           </Link>
-          <Link className={links} to="/">
+          <Link className={links} to="/register">
             {">"}
             <span>Register</span>
           </Link>
-          <Link className={links} to="/">
+          <Link className={links} to="/login">
             {">"}
             <span>Login</span>
           </Link>
