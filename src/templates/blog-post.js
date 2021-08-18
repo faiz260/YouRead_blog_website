@@ -3,6 +3,14 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {
+  blog_post,
+  content,
+  published_date,
+  title,
+  content_body,
+  content_image,
+} from "./blog-post.module.css"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -29,16 +37,23 @@ const BlogPost = props => {
   return (
     <Layout>
       <SEO title={props.data.contentfulBlogPost.title} />
-      <Link to="/blogs/">Visit the Blog Page</Link>
-      <div className="content">
-        <h1>{props.data.contentfulBlogPost.title}</h1>
-        <span className="meta">
-          Posted on {props.data.contentfulBlogPost.publishedDate}
-        </span>
+      <div className={blog_post}>
+        <div className={content}>
+          <h1 className={title}>{props.data.contentfulBlogPost.title}</h1>
+          <span className={published_date}>
+            Posted on {props.data.contentfulBlogPost.publishedDate}
+          </span>
 
-        <GatsbyImage image={image} alt={props.data.contentfulBlogPost.title} />
+          <GatsbyImage
+            image={image}
+            alt={props.data.contentfulBlogPost.title}
+            className={content_image}
+          />
 
-        {props.data.contentfulBlogPost.body.body}
+          <p className={content_body}>
+            {props.data.contentfulBlogPost.body.body}
+          </p>
+        </div>
       </div>
     </Layout>
   )

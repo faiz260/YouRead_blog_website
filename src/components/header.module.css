@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5em;
-  
 }
 .header_div > span {
   display: flex;
@@ -28,4 +27,16 @@
   color: white;
   font-size: 0.85rem;
   font-weight: lighter;
+}
+@media (max-width: 600px) {
+  .header_div > span {
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: space-evenly; */
+    flex-direction: column;
+    width: 40vw;
+    height: 10rem;
+    margin-top: 5rem;
+    /* border: 1px solid; */
+  }
 }

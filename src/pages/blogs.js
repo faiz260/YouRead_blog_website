@@ -54,7 +54,9 @@ const Blog = () => {
     <Layout>
       <Seo title="Blog" />
       <div className={header_hero}>
-        <h1>YouRead Blog</h1>
+        <h1>
+          You<span>Read</span>. Blog
+        </h1>
         <p className={hero_desc}>
           Far far away, behind the word mountains, far from the countries
           Vokalia and Consonantia, there live the blind texts. Separated they
