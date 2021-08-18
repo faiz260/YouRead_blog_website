@@ -43,7 +43,7 @@ ul {
   width: 19rem;
   height: 32rem;
   border-radius: 0.2rem;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   margin-top: 5rem;
 }
 .card > span {
@@ -114,9 +114,32 @@ ul {
     width: 90vw;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 675px) {
   .header_hero > h1 {
     font-size: 4rem;
+  }
+  ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+    height: 35rem;
+  }
+  .card > span {
+    height: 13rem;
+  }
+  .card_image {
+    width: 100%;
+    height: 19rem;
+    border-radius: 0.2rem;
+  }
+  .blog_title {
+    font-size: 2rem;
+  }
+  .excerpt {
+    font-size: 1rem;
   }
 }
 @media (max-width: 500px) {
