@@ -104,6 +104,14 @@ ul {
   background-color: #ffd369;
   color: white;
 }
+.bottom_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  margin-top: -5rem;
+  background-color: white;
+}
 @media (max-width: 775px) {
   .header_hero {
     justify-content: center;

@@ -17,6 +17,7 @@ import {
   link_icon,
   button_div,
   login_button,
+  bottom_div,
 } from "./blogs.module.css"
 import { AiOutlineArrowRight } from "@react-icons/all-files/ai/AiOutlineArrowRight"
 const Blog = () => {
@@ -146,6 +147,7 @@ const Blog = () => {
           </ul>
         )}
       </div>
+      <div className={bottom_div}></div>
     </Layout>
   )
 }

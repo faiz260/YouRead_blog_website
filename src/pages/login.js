@@ -4,7 +4,15 @@ import SEO from "../components/seo"
 import firebase from "gatsby-plugin-firebase"
 import { AuthContext } from "../context/auth"
 import { navigate } from "gatsby"
-
+import {
+  register_body,
+  register_card,
+  form,
+  submit_button,
+  input_field,
+  title,
+  register_content,
+} from "./register.module.css"
 function Register() {
   const [data, setData] = useState({
     email: "",
@@ -34,34 +42,48 @@ function Register() {
   console.log("DATA >>> ", data)
   return (
     <Layout>
-      <SEO title="Register" />
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <br />
-          <input
-            type="email"
-            name="email"
-            value={data.email}
-            onChange={handleChange}
-          />
+      <SEO title="Login" />
+      <div className={register_body}>
+        <div className={register_content}>
+          <h1>
+            You<span>Read</span>. Blog
+          </h1>
+          <p>
+            By loging in, you agreed to our terms of services and conditions.
+          </p>
         </div>
-        <div>
-          <label>Password:</label>
-          <br />
-          <input
-            type="password"
-            name="password"
-            value={data.password}
-            onChange={handleChange}
-          />
+        <div className={register_card}>
+          <h1 className={title}>Login</h1>
+          <form onSubmit={handleSubmit} className={form}>
+            <div>
+              <span>Email:</span>
+              <br />
+              <input
+                type="email"
+                name="email"
+                value={data.email}
+                onChange={handleChange}
+                className={input_field}
+              />
+            </div>
+            <div>
+              <span>Password:</span>
+              <br />
+              <input
+                type="password"
+                name="password"
+                value={data.password}
+                onChange={handleChange}
+                className={input_field}
+              />
+            </div>
+            {data.error ? <p style={{ color: "red" }}>{data.error}</p> : null}
+            <div>
+              <input type="submit" value="Login" className={submit_button} />
+            </div>
+          </form>
         </div>
-        {data.error ? <p style={{ color: "red" }}>{data.error}</p> : null}
-        <div>
-          <input type="submit" value="Login" />
-        </div>
-      </form>
+      </div>
     </Layout>
   )
 }

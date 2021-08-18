@@ -1,0 +1,119 @@
+.register_body {
+  padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -1rem;
+}
+.register_content {
+  width: 25rem;
+  height: 25rem;
+  color: white;
+}
+.register_content > h1 {
+  font-size: 4rem;
+}
+.register_content > h1 > span {
+  color: #ffd369;
+}
+.register_content > p {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+  width: 20rem;
+  line-height: 1.5rem;
+}
+.register_card {
+  background-color: white;
+  border-radius: 3px;
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  box-shadow: 1px 1px 2px rgb(170, 170, 170);
+}
+.title {
+  color: #ffd369;
+  font-size: 2.3rem;
+  text-shadow: 1px 1px 2px rgb(170, 170, 170);
+}
+.form {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.form > div > span {
+  color: rgb(97, 97, 97);
+}
+.input_field {
+  height: 2rem;
+  margin-top: 1rem;
+  color: rgb(97, 97, 97);
+}
+
+.submit_button {
+  width: 8rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: #ffd369;
+  border: 1px solid #ffd369;
+  color: white;
+  border-radius: 0.2rem;
+  box-shadow: 1px 1px 2px rgb(175, 175, 175);
+}
+.submit_button:hover {
+  background-color: white;
+  color: #ffd369;
+  box-shadow: 1px 1px 2px #ffd369;
+}
+.submit_button:focus {
+  background-color: #ffd369;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .register_body {
+    flex-direction: column;
+  }
+  .register_content {
+    margin-bottom: 2rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .register_content > h1 {
+    text-align: center;
+  }
+  .register_content > p {
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .register_content {
+    margin-bottom: 2rem;
+  }
+  .register_content > h1 {
+    font-size: 3rem;
+    padding-left: 1rem;
+  }
+  .register_content > p {
+    width: 100%;
+    text-align: center;
+  }
+  .register_card {
+    width: 80%;
+  }
+  .input_field {
+    width: 90%;
+  }
+  .form {
+    padding-left: 1rem;
+  }
+}
