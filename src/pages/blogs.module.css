@@ -156,5 +156,6 @@ ul {
 @media (max-width: 500px) {
   .header_hero > h1 {
     font-size: 3rem;
+    padding: 0 1rem;
   }
 }
