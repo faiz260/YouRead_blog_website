@@ -62,7 +62,7 @@ const IndexPage = () => {
 
       <div className={home_body}>
         <ul>
-          {data.allContentfulBlogPost.edges.map(data => {
+          {data.allContentfulBlogPost.edges.slice(0, 3).map(data => {
             return (
               <li key={data.node.id} className={content_card}>
                 <Link to={`/blogs/${data.node.slug}/`}>
