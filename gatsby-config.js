@@ -4,10 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `YouRead. Blog`,
+    description: `A blog website build with Gatsby, Contentful and Firebase with gated content system.`,
+    author: `@faizshahnawaz`,
+    siteUrl: `https://youread.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +27,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ffd369`,
+        theme_color: `#ffd369`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
