@@ -63,10 +63,7 @@ ul {
   text-decoration: none;
   color: black;
 }
-.excerpt {
-  font-size: 0.85rem;
-  margin-top: 2rem;
-}
+
 .publish_date {
   color: rgb(179, 179, 179);
   font-size: 0.7rem;

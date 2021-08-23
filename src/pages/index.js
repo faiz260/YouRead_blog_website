@@ -10,10 +10,8 @@ import {
   card_image,
   blog_title,
   publish_date,
-  excerpt,
   desc,
   explore_button,
-  hero_desc,
 } from "./index.module.css"
 import { AuthContext } from "../context/auth"
 
@@ -52,7 +50,7 @@ const IndexPage = () => {
       <div className={header_hero}>
         <h6>Hello Welcome To</h6>
         <h1>YouRead Blog</h1>
-        <p className={hero_desc}>
+        <p>
           Far far away, behind the word mountains, far from the countries
           Vokalia and Consonantia, there live the blind texts. Separated they
           live in Bookmarksgrove right at the coast of the Semantics, a large

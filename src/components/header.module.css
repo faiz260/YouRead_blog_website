@@ -6,7 +6,7 @@
   justify-content: space-between;
   padding: 0 1.5em;
 }
-.header_div > span > span {
+.header_div > span {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -28,13 +28,27 @@
   font-size: 0.85rem;
   font-weight: lighter;
   text-shadow: 1px 1px 1px rgb(167, 167, 167);
+  padding: 1rem;
 }
 .menu_icon {
   color: white;
 }
+.navbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+}
+.navCollapse {
+}
+.nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  width: 40vw;
+}
 
 @media (max-width: 700px) {
-  .header_div > span > span {
+  .header_div > span {
     align-items: flex-end;
     justify-content: flex-end;
   }

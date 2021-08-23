@@ -8,14 +8,13 @@ import {
   title,
   link,
   menu_icon,
-  menu_item,
-  menu,
-  icon_button,
+  navbar,
+  nav,
+  navCollapse,
 } from "./header.module.css"
-import IconButton from "@material-ui/core/IconButton"
-import Menu from "@material-ui/core/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
 import { RiMenu3Fill } from "@react-icons/all-files/ri/RiMenu3Fill"
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Navbar, Nav } from "react-bootstrap"
 
 const options = [
   { name: "Home", link: "/" },
@@ -36,11 +35,8 @@ const options2 = [
   { name: "Blogs", link: "/blogs", handler: handleSimpleClick },
   { name: "Logout", link: "/login", handler: handleLogout },
 ]
-const ITEM_HEIGHT = 48
 
 const Header = ({ siteTitle }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const open = Boolean(anchorEl)
   const { user } = useContext(AuthContext)
 
   useEffect(() => {
@@ -57,13 +53,7 @@ const Header = ({ siteTitle }) => {
     await firebase.auth().signOut()
     navigate("/login")
   }
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
   return (
     <header>
       <div className={header_div}>
@@ -74,123 +64,35 @@ const Header = ({ siteTitle }) => {
         </h1>
 
         {!user ? (
-          <span>
-            {window.innerWidth < 700 ? (
-              <span>
-                <IconButton
-                  aria-label="more"
-                  aria-controls="long-menu"
-                  aria-haspopup="true"
-                  onClick={handleClick}
-                >
-                  <RiMenu3Fill className={menu_icon} />
-                </IconButton>
-                <Menu
-                  className={menu}
-                  id="long-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={open}
-                  onClose={handleClose}
-                  PaperProps={{
-                    style: {
-                      width: "20ch",
-                      backgroundColor: "#ffd369",
-                    },
-                  }}
-                >
-                  {options.map(option => (
-                    <Link to={option.link} className={link}>
-                      <MenuItem
-                        key={option.name}
-                        selected={option.name === "Pyxis"}
-                        onClick={handleClose}
-                        className={menu_item}
-                      >
-                        {option.name}
-                      </MenuItem>
-                    </Link>
-                  ))}
-                </Menu>
-              </span>
-            ) : (
-              <span>
-                <Link to="/" className={link}>
-                  Home
-                </Link>
-                <Link to="/blogs" className={link}>
-                  Blogs
-                </Link>
-                <Link to="/register" className={link}>
-                  Register
-                </Link>
-                <Link to="/login" className={link}>
-                  Login
-                </Link>
-              </span>
-            )}
-          </span>
-        ) : (
-          <span>
-            {window.innerWidth < 700 ? (
-              <span>
-                <IconButton
-                  aria-label="more"
-                  aria-controls="long-menu"
-                  aria-haspopup="true"
-                  onClick={handleClick}
-                  className={icon_button}
-                >
-                  <RiMenu3Fill className={menu_icon} />
-                </IconButton>
-                <Menu
-                  id="long-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={open}
-                  onClose={handleClose}
-                  PaperProps={{
-                    style: {
-                      width: "20ch",
-                      backgroundColor: "#ffd369",
-                    },
-                  }}
-                  className={menu}
-                >
-                  {options2.map(option => (
-                    <Link
-                      to={option.link}
-                      onClick={option.handler}
-                      className={link}
-                    >
-                      <MenuItem
-                        key={option.name}
-                        selected={option.name === "Pyxis"}
-                        onClick={handleClose}
-                        className={menu_item}
-                      >
-                        {option.name}
-                      </MenuItem>
-                    </Link>
-                  ))}
-                </Menu>
-              </span>
-            ) : (
-              <span>
-                <Link to="/" className={link}>
-                  Home
-                </Link>
-                <Link to="/blogs" className={link}>
-                  Blogs
-                </Link>
-                <span onClick={handleLogout}>
-                  <Link to="/login" className={link}>
-                    Logout
+          <Navbar className={navbar} expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse className={navCollapse} id="basic-navbar-nav">
+              <Nav className={nav}>
+                {options.map(option => (
+                  <Link to={option.link} className={link}>
+                    {option.name}
                   </Link>
-                </span>
-              </span>
-            )}
-          </span>
+                ))}
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        ) : (
+          <Navbar className={navbar} expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className={nav}>
+                {options2.map(option => (
+                  <Link
+                    to={option.link}
+                    className={link}
+                    onClick={option.handler}
+                  >
+                    {option.name}
+                  </Link>
+                ))}
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
         )}
       </div>
     </header>
