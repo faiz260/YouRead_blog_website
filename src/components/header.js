@@ -64,7 +64,7 @@ const Header = ({ siteTitle }) => {
         </h1>
 
         {!user ? (
-          <Navbar className={navbar} expand="lg">
+          <Navbar className={navbar} expand="md">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse className={navCollapse} id="basic-navbar-nav">
               <Nav className={nav}>
@@ -77,9 +77,9 @@ const Header = ({ siteTitle }) => {
             </Navbar.Collapse>
           </Navbar>
         ) : (
-          <Navbar className={navbar} expand="lg">
+          <Navbar className={navbar} expand="md">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse className={navCollapse} id="basic-navbar-nav">
               <Nav className={nav}>
                 {options2.map(option => (
                   <Link

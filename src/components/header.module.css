@@ -39,12 +39,14 @@
   justify-content: space-around !important;
 }
 .navCollapse {
+  /* margin-top: 20rem;
+  background-color: #fda359; */
+  padding-top: 1rem;
 }
 .nav {
   display: flex !important;
   align-items: center !important;
   justify-content: space-around !important;
-  width: 40vw;
 }
 
 @media (max-width: 700px) {

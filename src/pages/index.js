@@ -49,7 +49,9 @@ const IndexPage = () => {
       <Seo title="Home" />
       <div className={header_hero}>
         <h6>Hello Welcome To</h6>
-        <h1>YouRead Blog</h1>
+        <h1>
+          You<span>Read</span> Blog
+        </h1>
         <p>
           Far far away, behind the word mountains, far from the countries
           Vokalia and Consonantia, there live the blind texts. Separated they

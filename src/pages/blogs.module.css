@@ -142,10 +142,6 @@ ul {
   }
   .card {
     width: 90%;
-    height: 35rem;
-  }
-  .card > span {
-    height: 13rem;
   }
   .card_image {
     width: 100%;
